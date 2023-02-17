@@ -8,11 +8,15 @@ pipeline {
 			}
 		}
 		stage('Test') {
-			sh "./hello_cpp"
-			echo "test stage done"
+			steps {
+				sh "./hello_exec"
+				echo "test stage done"
+			}
 		}
 		stage('Deploy') {
-			echo "deploy stage done"
+			steps {
+				echo "deploy stage done"
+			}
 		}
 	}
 
